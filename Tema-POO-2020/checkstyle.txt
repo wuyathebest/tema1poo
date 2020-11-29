@@ -1,2 +1,12 @@
 Starting audit...
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\Action.java:3:1: Redundant import from the same package - classes.User. [RedundantImport]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\Action.java:15:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\Action.java:15:14: 'public' modifier out of order with the JLS suggestions. [ModifierOrder]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\Favorite.java:9:7: 'public' modifier out of order with the JLS suggestions. [ModifierOrder]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\Favorite.java:18:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\User.java:8:7: 'public' modifier out of order with the JLS suggestions. [ModifierOrder]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\User.java:28:61: Empty statement. [EmptyStatement]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\classes\User.java:33:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] C:\Users\wuyat\Desktop\tema1poo\Tema-POO-2020\.\src\main\Main.java:18:15: Using the '.*' form of import should be avoided - classes.*. [AvoidStarImport]
 Audit done.
+Checkstyle ends with 9 errors.

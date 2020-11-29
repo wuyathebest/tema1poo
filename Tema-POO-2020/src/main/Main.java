@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 
+import classes.*;
 /**
  * The entry point to this homework. It runs the checker that tests your implentation.
  */
@@ -72,6 +73,15 @@ public final class Main {
 
         //TODO add here the entry point to your implementation
 
+        int i;
+        for (i = 0; i < input.getCommands().size(); i++) {
+            if (input.getCommands().get(i).getActionType().equals("command")) {
+                if (input.getCommands().get(i).getType().equals("favorite")) {
+                    Favorite fav = new Favorite(input.getCommands().get(i), input.getUsers());
+                    arrayResult.add(fav.execute());
+                }
+            }
+        }
         fileWriter.closeJSON(arrayResult);
     }
 }
