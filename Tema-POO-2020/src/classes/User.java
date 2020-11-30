@@ -10,6 +10,11 @@ final public class User {
     private String subscriptionType;
     private ArrayList<String> favoriteMovies;
     private Map<String, Integer> history;
+    private ArrayList<MovieRate> ratedMovies = new ArrayList<>();
+
+    public ArrayList<MovieRate> getRatedMovies() {
+        return ratedMovies;
+    }
 
     public ArrayList<String> getFavoriteMovies() {
         return favoriteMovies;
@@ -47,4 +52,31 @@ final public class User {
         return result;
     }
 
+    public int addRating(final String title, final double grade) {
+        boolean seen = this.history.containsKey(title);
+        int response = 1;
+        if (seen) {
+            for (int i = 0; i < this.ratedMovies.size(); i++) {
+                if (this.ratedMovies.get(i).getTitle().equals(title)) {
+                    response = 0;
+                    break;
+                }
+            }
+            if (response == 1) {
+                this.ratedMovies.add(new MovieRate(title, grade));
+            }
+        } else {
+            response = 2;
+        }
+        return response;
+    }
+
+    public void addViews(final String title) {
+        boolean seen = history.containsKey(title);
+        if (seen) {
+            history.put(title, history.get(title) + 1);
+        } else {
+            history.put(title, 1);
+        }
+    }
 }

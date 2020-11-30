@@ -80,6 +80,14 @@ public final class Main {
                     Favorite fav = new Favorite(input.getCommands().get(i), input.getUsers());
                     arrayResult.add(fav.execute());
                 }
+                if (input.getCommands().get(i).getType().equals("view")) {
+                    View view = new View(input.getCommands().get(i), input.getUsers());
+                    arrayResult.add(view.execute());
+                }
+                if (input.getCommands().get(i).getType().equals("rating")) {
+                    Rating rate = new Rating(input.getCommands().get(i), input.getUsers());
+                    arrayResult.add(rate.execute());
+                }
             }
         }
         fileWriter.closeJSON(arrayResult);

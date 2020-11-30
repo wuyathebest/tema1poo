@@ -1,6 +1,5 @@
 package classes;
 
-import classes.User;
 import fileio.ActionInputData;
 import fileio.UserInputData;
 import org.json.JSONObject;
@@ -32,5 +31,4 @@ public abstract class Action {
         this.username = input.getUsername();
         this.findUser(userInput);
     }
-
 }

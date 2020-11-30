@@ -6,26 +6,29 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-final public class Favorite extends Command {
+final public class Rating extends Command {
     private String title;
+    private double grade;
 
-    public Favorite(final ActionInputData input, final List<UserInputData> userInput) {
+    public Rating(final ActionInputData input, final List<UserInputData> userInput) {
         super(input, userInput);
         this.title = input.getTitle();
+        this.grade = input.getGrade();
     }
 
     public JSONObject execute() {
-        int response = this.user.addFavorite(title);
+        int response = user.addRating(title, grade);
         JSONObject result = new JSONObject();
         result.put("id", this.actionId);
         if (response == 0) {
-            this.message = "error -> " + this.title + " is not seen";
+            this.message = "error -> " + this.title + " has been already rated";
         }
         if (response == 1) {
-            this.message = "success -> " + this.title + " was added as favourite";
+            this.message = "success -> " + this.title + " was rated with " + this.grade
+                    + " by " + this.username;
         }
         if (response == 2) {
-            this.message = "error -> " + this.title + " is already in favourite list";
+                this.message = "error -> " + this.title + " is not seen";
         }
         result.put("message", this.message);
         return result;
